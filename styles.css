@@ -217,13 +217,17 @@ p {
 
 .hero-media img,
 .rounded-image {
+  width: 100%;
   border-radius: 8px;
   box-shadow: var(--shadow);
   object-fit: cover;
 }
 
 .hero-media img {
-  width: 100%;
+  aspect-ratio: 4 / 5;
+}
+
+.section-photo {
   aspect-ratio: 4 / 5;
 }
 
@@ -489,6 +493,10 @@ p {
   object-fit: cover;
 }
 
+.gallery-grid figure:nth-child(3) img {
+  object-position: center top;
+}
+
 .gallery-large {
   grid-row: span 2;
 }
@@ -748,6 +756,14 @@ textarea {
     min-height: auto;
   }
 
+  .hero-media img,
+  .city-hero .rounded-image,
+  .split .rounded-image,
+  .service-area .rounded-image {
+    aspect-ratio: 4 / 3;
+    max-height: 520px;
+  }
+
   .step-grid,
   .menu-grid,
   .gallery-grid {
@@ -794,6 +810,25 @@ textarea {
 
   .trust-strip div {
     min-height: auto;
+  }
+
+  .hero-media img,
+  .city-hero .rounded-image,
+  .split .rounded-image,
+  .service-area .rounded-image,
+  .gallery-grid img {
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .gallery-grid figure:nth-child(3) img {
+    aspect-ratio: 4 / 5;
+  }
+
+  .service-area .rounded-image {
+    object-fit: contain;
+    background: #fff;
   }
 
   .price {

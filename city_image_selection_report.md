@@ -8,8 +8,8 @@
   - Strong proof for large birthday/private parties.
 - Homepage gallery: `assets/real-events/night-backyard-hibachi-setup-wide.jpg`
   - Good evening-service atmosphere without close-up guest faces.
-- Homepage gallery: `assets/real-events/grill-front-table-setup-hero.jpg`
-  - Shows grill, backyard table setup, and birthday decor.
+- Homepage gallery: `assets/real-events/large-event-vertical-setup.jpg`
+  - Shows prepared tables before guests arrive.
 - Service area food image: `assets/hibachi-combo.jpg`
   - Keep this image. User explicitly approved it.
 - Los Angeles city page: `assets/real-events/large-event-long-table-wide.jpg`

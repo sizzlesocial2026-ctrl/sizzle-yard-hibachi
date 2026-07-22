@@ -1,13 +1,7 @@
 from html.parser import HTMLParser
 from pathlib import Path
 
-PAGES = [
-    "index.html",
-    "thank-you.html",
-    "birthday-hibachi-los-angeles.html",
-    "hibachi-at-home-pasadena.html",
-    "mobile-hibachi-arcadia.html",
-]
+PAGES = sorted(path.name for path in Path(".").glob("*.html"))
 
 STATIC_FILES = [
     "robots.txt",
@@ -36,7 +30,8 @@ def path_exists(ref):
     if ref.startswith(("http", "sms:", "tel:", "mailto:", "#")):
         return True
 
-    path, _, anchor = ref.partition("#")
+    path, _, _query = ref.partition("?")
+    path, _, anchor = path.partition("#")
     if not path:
         return True
 

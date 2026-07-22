@@ -1,4 +1,23 @@
-const config = window.SIZZLE_YARD_CONFIG || {};
+const config = {
+  phoneDisplay: "(626) 681-5258",
+  phoneE164: "+16266815258",
+  smsMessage: "Hi, I would like to check availability for a birthday hibachi party.",
+  depositLink: "https://buy.stripe.com/bJeeVdbii7Vr4ym6cz7IY00",
+  googleMapsLink: "https://maps.app.goo.gl/HuKRDXf7StnUpv5q8?g_st=ic",
+  googleReviewLink: "https://www.google.com/search?q=Sizzle+Yard+Hibachi+%E2%80%93+Hibachi+at+Home+Los+Angeles&ludocid=3950289117609659613#lrd=0x6a564786b5a35abb:0x36d23f05df370cdd,3",
+  adultPrice: 60,
+  kidPrice: 30,
+  minimumGuests: 10,
+  minimumTotal: 600,
+  depositAmount: 100,
+  formEndpoint: "https://script.google.com/macros/s/AKfycbwbIBuKgH286c8RTI8ebXUv90wqgo2p81oszPZNvNB4NO94NXmOXqeo-lsPLR0ykSglZg/exec",
+  googleTagId: "AW-18300535067",
+  googleAdsConversionId: "AW-18300535067",
+  googleAdsLeadConversionLabel: "-udBCPKQj8scEJuCsJZE",
+  googleAdsPhoneConversionLabel: "ET_PCNLU-8scEJuCsJZE",
+  googleAdsSmsConversionLabel: "zPsiCNXU-8scEJuCsJZE",
+  ...(window.SIZZLE_YARD_CONFIG || {})
+};
 const bookingForm = document.querySelector("#booking-form");
 const quoteInputs = document.querySelectorAll(".js-quote-input");
 const quoteTotal = document.querySelector("#quote-total");
@@ -54,11 +73,11 @@ function updateQuote() {
   guestCountInput.value = String(quote.guests);
 
   if (quote.guests === 0) {
-    quoteNote.textContent = `${pricing.minimumGuests} guest minimum / ${money(pricing.minimumTotal)} minimum total. Final confirmation required before deposit.`;
+    quoteNote.textContent = `${pricing.minimumGuests} guest minimum / ${money(pricing.minimumTotal)} minimum total. Sales tax is not included. Final confirmation required before deposit.`;
   } else if (quote.guests < pricing.minimumGuests || quote.minimumApplied) {
-    quoteNote.textContent = `${quote.guests} guest estimate uses the ${money(pricing.minimumTotal)} minimum total. Final confirmation required before deposit.`;
+    quoteNote.textContent = `${quote.guests} guest estimate uses the ${money(pricing.minimumTotal)} minimum total. Sales tax is not included. Final confirmation required before deposit.`;
   } else {
-    quoteNote.textContent = `${quote.guests} guests estimated. Final confirmation required before deposit.`;
+    quoteNote.textContent = `${quote.guests} guests estimated. Sales tax is not included. Final confirmation required before deposit.`;
   }
 }
 
@@ -81,6 +100,12 @@ function loadGoogleTag() {
   if (config.googleAdsConversionId && config.googleAdsConversionId !== config.googleTagId) {
     window.gtag("config", config.googleAdsConversionId);
   }
+
+  if (config.googleAdsConversionId && config.googleAdsPhoneConversionLabel && config.phoneDisplay) {
+    window.gtag("config", `${config.googleAdsConversionId}/${config.googleAdsPhoneConversionLabel}`, {
+      phone_conversion_number: config.phoneDisplay
+    });
+  }
 }
 
 function trackEvent(name, params = {}) {
@@ -98,7 +123,7 @@ function trackAdsConversion(label) {
 }
 
 function smsHref() {
-  const phone = config.phoneE164 || "+16263664111";
+  const phone = config.phoneE164 || "+16266815258";
   const message = config.smsMessage || "";
   const separator = phone.includes("?") ? "&" : "?";
   return `sms:${phone}${message ? `${separator}body=${encodeURIComponent(message)}` : ""}`;
@@ -107,10 +132,9 @@ function smsHref() {
 loadGoogleTag();
 
 document.querySelectorAll(".js-phone-link").forEach((link) => {
-  link.href = `tel:${config.phoneE164 || "+16263664111"}`;
+  link.href = `tel:${config.phoneE164 || "+16266815258"}`;
   link.addEventListener("click", () => {
     trackEvent("phone_click");
-    trackAdsConversion(config.googleAdsPhoneConversionLabel);
   });
 });
 
@@ -139,6 +163,16 @@ document.querySelectorAll('a[href="#book"], a[href="index.html#book"]').forEach(
 });
 
 if (bookingForm) {
+  const submitButton = bookingForm.querySelector('button[type="submit"]');
+  const submitButtonLabel = submitButton?.textContent || "Request Availability";
+  const submitStatus = document.createElement("p");
+  let isSubmitting = false;
+
+  submitStatus.className = "form-submit-status";
+  submitStatus.setAttribute("role", "status");
+  submitStatus.setAttribute("aria-live", "polite");
+  submitButton?.insertAdjacentElement("afterend", submitStatus);
+
   updateQuote();
 
   quoteInputs.forEach((input) => {
@@ -147,6 +181,15 @@ if (bookingForm) {
 
   bookingForm.addEventListener("submit", async (event) => {
     event.preventDefault();
+
+    if (isSubmitting) return;
+
+    isSubmitting = true;
+    submitStatus.textContent = "Sending your request...";
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+    }
 
     const data = Object.fromEntries(new FormData(bookingForm).entries());
     const quote = calculateQuote(bookingForm);
@@ -165,26 +208,51 @@ if (bookingForm) {
 
     localStorage.setItem("sizzleYardLastLead", JSON.stringify(lead));
 
-    if (config.formEndpoint) {
+    try {
+      if (!config.formEndpoint) throw new Error("Missing form endpoint");
+
+      const controller = new AbortController();
+      const timeoutId = window.setTimeout(() => controller.abort(), 15000);
+
       try {
         await fetch(config.formEndpoint, {
           method: "POST",
           mode: "no-cors",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(lead)
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(lead),
+          signal: controller.signal
         });
-      } catch (error) {
-        console.error("Lead submission failed", error);
+      } finally {
+        window.clearTimeout(timeoutId);
       }
+    } catch (error) {
+      console.error("Lead submission failed", error);
+      trackEvent("lead_form_error", {
+        error_type: error?.name === "AbortError" ? "timeout" : "network"
+      });
+      submitStatus.textContent = "We could not send your request. Please try again or text us directly.";
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = submitButtonLabel;
+      }
+      isSubmitting = false;
+      return;
     }
 
+    sessionStorage.setItem("sizzleYardLeadSubmitted", "true");
     trackEvent("lead_form_submit");
-    trackAdsConversion(config.googleAdsLeadConversionLabel);
-    window.location.href = "thank-you.html";
+    window.location.href = "thank-you.html?lead=1";
   });
 }
 
 if (document.body.classList.contains("thank-you-page")) {
   trackEvent("lead_thank_you_view");
-  trackAdsConversion(config.googleAdsLeadConversionLabel);
+  const thankYouParams = new URLSearchParams(window.location.search);
+  const shouldTrackLead = thankYouParams.get("lead") === "1" || sessionStorage.getItem("sizzleYardLeadSubmitted") === "true";
+
+  if (shouldTrackLead) {
+    sessionStorage.removeItem("sizzleYardLeadSubmitted");
+    trackAdsConversion(config.googleAdsLeadConversionLabel);
+    window.history.replaceState({}, document.title, "thank-you.html");
+  }
 }

@@ -33,21 +33,20 @@ After deployment:
 
 ## Before Ads
 
-Fill these in [config.js](/Users/sizzlesocial/Documents/yard%20hibachi/config.js):
+Confirm these values in [script.js](/Users/sizzlesocial/Documents/yard%20hibachi/script.js):
 
 ```js
-googleTagId: "",
-googleAdsConversionId: "",
-googleAdsLeadConversionLabel: "",
-googleAdsPhoneConversionLabel: "",
-googleAdsSmsConversionLabel: ""
+googleTagId: "AW-18300535067",
+googleAdsConversionId: "AW-18300535067",
+googleAdsLeadConversionLabel: "-udBCPKQj8scEJuCsJZE",
+googleAdsPhoneConversionLabel: "ET_PCNLU-8scEJuCsJZE",
+googleAdsSmsConversionLabel: "zPsiCNXU-8scEJuCsJZE"
 ```
 
-Also set:
+Also confirm:
 
 ```js
-formEndpoint: ""
+formEndpoint: "https://script.google.com/macros/s/AKfycbwbIBuKgH286c8RTI8ebXUv90wqgo2p81oszPZNvNB4NO94NXmOXqeo-lsPLR0ykSglZg/exec"
 ```
 
-when Google Sheet / Airtable lead capture is ready.
-
+The live pages no longer load a separate `config.js` file because some browser ad blockers can block generic config filenames and break lead tracking.

@@ -29,27 +29,25 @@ Deploy -> New deployment -> Web app
 
 部署后复制 Web App URL。
 
-## 4. 填入网站配置
+## 4. 当前网站配置
 
-打开 [config.js](/Users/sizzlesocial/Documents/yard%20hibachi/config.js)，把：
+2026-07-08 更新：网站运行配置已移到 [script.js](/Users/sizzlesocial/Documents/yard%20hibachi/script.js)，不再依赖 `config.js`，避免广告拦截器阻挡表单和 tracking 配置。
 
-```js
-formEndpoint: ""
-```
-
-替换成：
+当前已接入 Web App URL：
 
 ```js
-formEndpoint: "你的 Web App URL"
+formEndpoint: "https://script.google.com/macros/s/AKfycbwbIBuKgH286c8RTI8ebXUv90wqgo2p81oszPZNvNB4NO94NXmOXqeo-lsPLR0ykSglZg/exec"
 ```
+
+如以后更换 Google Sheet / Apps Script，只改 `script.js` 里的 `formEndpoint`。
 
 ## 5. 电话信息
 
 当前已设置为：
 
 ```js
-phoneDisplay: "(626) 366-4111",
-phoneE164: "+16263664111",
+phoneDisplay: "(626) 681-5258",
+phoneE164: "+16266815258",
 ```
 
 ## 6. 测试
@@ -59,3 +57,5 @@ phoneE164: "+16263664111",
 - 页面跳到 `thank-you.html`
 - Google Sheet 出现新行
 - 电话和短信按钮打开正确号码
+
+2026-07-08 已完成线上测试：测试 lead 成功写入 `Sizzle Yard Hibachi Leads`，验证后已删除测试行。

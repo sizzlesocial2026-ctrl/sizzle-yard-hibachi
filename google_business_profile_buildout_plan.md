@@ -1,21 +1,21 @@
 # Sizzle Yard Hibachi Google Business Profile Buildout Plan
 
-Date: 2026-07-01
+Date: 2026-07-08
 
 ## Current Status
 
 - Business profile: `Sizzle Yard Hibachi – Hibachi at Home Los Angeles`
-- Status: verification processing
+- Status: verified and publicly manageable
 - Website: `https://sizzleyardhibachi.com/`
-- Phone/SMS in Google: `(626) 366-4111` / `+16263664111`
+- Phone/SMS in Google: `(626) 681-5258` / `+16266815258`
 - Website phone/SMS should match Google.
 
 ## Priority 1: Contact Info
 
 Keep consistent:
 
-- Phone: `(626) 366-4111`
-- SMS: `sms:+16263664111`
+- Phone: `(626) 681-5258`
+- SMS: `sms:+16266815258`
 
 Reason:
 
@@ -83,4 +83,23 @@ Avoid:
 
 ## Recommendation
 
-Do not aggressively change the business name while verification is processing. Keep the current name until Google approves, then consider whether to simplify to `Sizzle Yard Hibachi`.
+Keep the public business name consistent for now: `Sizzle Yard Hibachi – Hibachi at Home Los Angeles`. If simplifying to `Sizzle Yard Hibachi`, do it as a separate profile edit after confirming it will not affect visibility or verification.
+
+
+## 2026-07-08 Progress
+
+Completed:
+
+- Google Business Profile verification passed.
+- Public profile website confirmed as `https://sizzleyardhibachi.com/`.
+- Public phone confirmed as `(626) 681-5258`.
+- Public Maps link confirmed as `https://maps.app.goo.gl/HuKRDXf7StnUpv5q8?g_st=ic`.
+- First update post submitted from the Yard profile with birthday hibachi at home copy and Yard pricing.
+
+Still needs optimization:
+
+- Add/confirm service list from this plan inside Google Business Profile.
+- Add more Yard-only photos and menu/service photos.
+- Collect first real Google reviews.
+- Confirm whether San Diego should remain in the business description/service area; do not change unless the actual service area is confirmed.
+- Investigate why the Yard management page displayed a Social ad summary/preview. Treat this as a brand isolation risk, but do not modify Social campaigns from the Yard workflow.

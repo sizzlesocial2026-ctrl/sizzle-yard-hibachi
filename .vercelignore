@@ -1,0 +1,14 @@
+.DS_Store
+**/.DS_Store
+brand_isolation_audit/**
+scripts/**
+*.md
+*.gs
+*.xlsx
+media/source_manifest.csv
+media/raw-inbox/**
+media/approved-yard-only/**
+media/rejected-do-not-use/**
+media/video-raw-candidates/**
+media/video-approved-yard-only/**
+media/video-rejected-do-not-use/**

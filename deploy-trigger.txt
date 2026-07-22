@@ -1,1 +1,0 @@
-Trigger GitHub deployment for Sizzle Yard Hibachi.

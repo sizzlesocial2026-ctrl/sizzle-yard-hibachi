@@ -1,7 +1,10 @@
 {
   "scripts": {
     "dev": "python3 -m http.server 4175 --bind 127.0.0.1",
-    "check": "python3 scripts/check_site.py"
+    "check": "python3 scripts/check_site.py",
+    "audit:media": "python3 scripts/audit_media_overlap.py",
+    "video:review": "python3 scripts/build_video_review_page.py",
+    "video:thumbs:swift": "SWIFT_MODULE_CACHE_PATH=.swift-cache CLANG_MODULE_CACHE_PATH=.swift-cache/clang swift scripts/sizzle_video_tool.swift thumbnails /private/tmp/sizzle-yard-video-review/source_mapping.csv /private/tmp/sizzle-yard-video-review/thumbs"
   },
   "devDependencies": {}
 }

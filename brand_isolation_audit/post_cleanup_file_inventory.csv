@@ -1,0 +1,67 @@
+relative_path,extension,size_bytes,status,contains_social_signal,contains_yard_signal,contains_shared_ads_id,recommended_action
+.gitignore,[none],59,INTERNAL: neutral support file,no,no,no,Keep local unless later confirmed unnecessary.
+.vercelignore,[none],76,INTERNAL: neutral support file,no,no,no,Keep local unless later confirmed unnecessary.
+DEPLOYMENT.md,.md,994,REVIEW: mentions Social only as boundary warning/reference,yes,yes,no,Allowed only in internal docs. Do not deploy as customer-facing content.
+ads_backend_values_to_fill.md,.md,1136,YARD: current project file,no,yes,no,Keep.
+assets/brand/sizzle-yard-hibachi-logo-192.png,.png,66374,YARD: current project file,no,no,no,Keep.
+assets/brand/sizzle-yard-hibachi-logo-512.png,.png,378753,YARD: current project file,no,no,no,Keep.
+assets/brand/sizzle-yard-hibachi-logo.png,.png,1810823,YARD: current project file,no,no,no,Keep.
+assets/generated/sizzle-yard-city-party-alhambra.jpg,.jpg,75488,YARD: current project file,no,no,no,Keep.
+assets/generated/sizzle-yard-city-party-arcadia.jpg,.jpg,92012,YARD: current project file,no,no,no,Keep.
+assets/generated/sizzle-yard-city-party-burbank.jpg,.jpg,97481,YARD: current project file,no,no,no,Keep.
+assets/generated/sizzle-yard-city-party-extra-party.jpg,.jpg,89452,YARD: current project file,no,no,no,Keep.
+assets/generated/sizzle-yard-city-party-glendale.jpg,.jpg,118361,YARD: current project file,no,no,no,Keep.
+assets/generated/sizzle-yard-city-party-los-angeles.jpg,.jpg,96153,YARD: current project file,no,no,no,Keep.
+assets/generated/sizzle-yard-city-party-monterey-park.jpg,.jpg,91106,YARD: current project file,no,no,no,Keep.
+assets/generated/sizzle-yard-city-party-orange-county.jpg,.jpg,83410,YARD: current project file,no,no,no,Keep.
+assets/generated/sizzle-yard-city-party-pasadena.jpg,.jpg,99523,YARD: current project file,no,no,no,Keep.
+assets/generated/sizzle-yard-city-party-rosemead.jpg,.jpg,90161,YARD: current project file,no,no,no,Keep.
+assets/generated/sizzle-yard-city-party-san-gabriel.jpg,.jpg,86694,YARD: current project file,no,no,no,Keep.
+assets/generated/sizzle-yard-city-party-temple-city.jpg,.jpg,87081,YARD: current project file,no,no,no,Keep.
+assets/generated/sizzle-yard-party-birthday-vertical.jpg,.jpg,225054,YARD: current project file,no,no,no,Keep.
+assets/generated/sizzle-yard-party-dancing-wide.jpg,.jpg,207988,YARD: current project file,no,no,no,Keep.
+assets/generated/sizzle-yard-party-fire-staff-wide.jpg,.jpg,211418,YARD: current project file,no,no,no,Keep.
+assets/generated/sizzle-yard-party-food-square.jpg,.jpg,317051,YARD: current project file,no,no,no,Keep.
+assets/generated/sizzle-yard-party-game-wide.jpg,.jpg,263603,YARD: current project file,no,no,no,Keep.
+assets/generated/sizzle-yard-party-table-vertical.jpg,.jpg,234706,YARD: current project file,no,no,no,Keep.
+birthday-hibachi-los-angeles.html,.html,3701,YARD: current project file,no,yes,no,Keep.
+brand_isolation_audit/README.md,.md,348,"INTERNAL: audit/report, not deployed",yes,yes,no,Keep local only; ignored by Vercel.
+brand_isolation_audit/brand_isolation_report.md,.md,20194,"INTERNAL: audit/report, not deployed",yes,yes,yes,Keep local only; ignored by Vercel.
+brand_isolation_audit/deleted_local_files_2026-07-05.md,.md,1641,"INTERNAL: audit/report, not deployed",yes,yes,no,Keep local only; ignored by Vercel.
+brand_isolation_audit/file_inventory.csv,.csv,89571,"INTERNAL: audit/report, not deployed",no,no,no,Keep local only; ignored by Vercel.
+city_image_selection_report.md,.md,2338,INTERNAL: neutral support file,no,no,no,Keep local unless later confirmed unnecessary.
+config.js,.js,978,RESOLVED: Yard Ads tracking confirmed,no,yes,yes,Resolved 2026-07-08: Yard uses AW-18300535067 in script.js; old AW-18105083874 is not used for Yard.
+deployment_result.md,.md,2822,REVIEW: mentions Social only as boundary warning/reference,yes,yes,no,Allowed only in internal docs. Do not deploy as customer-facing content.
+form_setup_google_sheet.md,.md,1087,REVIEW: mentions Social only as boundary warning/reference,yes,yes,no,Allowed only in internal docs. Do not deploy as customer-facing content.
+google_ads_connection_notes.md,.md,2766,REVIEW: mentions Social only as boundary warning/reference,yes,yes,no,Allowed only in internal docs. Do not deploy as customer-facing content.
+google_apps_script_form_receiver.gs,.gs,9983,YARD: current project file,no,yes,no,Keep.
+google_business_profile_buildout_plan.md,.md,2472,REVIEW: mentions Social only as boundary warning/reference,yes,yes,no,Allowed only in internal docs. Do not deploy as customer-facing content.
+google_business_profile_current_status.md,.md,1762,YARD: current project file,no,yes,no,Keep.
+google_business_profile_launch_package.md,.md,7718,REVIEW: mentions Social only as boundary warning/reference,yes,yes,no,Allowed only in internal docs. Do not deploy as customer-facing content.
+hibachi-at-home-alhambra.html,.html,3538,YARD: current project file,no,yes,no,Keep.
+hibachi-at-home-burbank.html,.html,3533,YARD: current project file,no,yes,no,Keep.
+hibachi-at-home-glendale.html,.html,3501,YARD: current project file,no,yes,no,Keep.
+hibachi-at-home-monterey-park.html,.html,3559,YARD: current project file,no,yes,no,Keep.
+hibachi-at-home-pasadena.html,.html,3683,YARD: current project file,no,yes,no,Keep.
+hibachi-at-home-rosemead.html,.html,3506,YARD: current project file,no,yes,no,Keep.
+hibachi-at-home-san-gabriel.html,.html,3569,YARD: current project file,no,yes,no,Keep.
+hibachi-at-home-temple-city.html,.html,3497,YARD: current project file,no,yes,no,Keep.
+hibachi_birthday_market_report.md,.md,11438,YARD: current project file,no,yes,no,Keep.
+index.html,.html,21646,YARD: current project file,no,yes,no,Keep.
+launch_checklist.md,.md,2911,RESOLVED: Yard Ads tracking confirmed,yes,yes,yes,Resolved 2026-07-08: Yard uses AW-18300535067 in script.js; old AW-18105083874 is not used for Yard.
+mobile-hibachi-arcadia.html,.html,3685,YARD: current project file,no,yes,no,Keep.
+orange-county-hibachi-at-home.html,.html,3593,YARD: current project file,no,yes,no,Keep.
+order_automation_plan.md,.md,1688,YARD: current project file,no,yes,no,Keep.
+package.json,.json,152,YARD: current project file,no,no,no,Keep.
+photo_usage_rules.md,.md,1927,REVIEW: mentions Social only as boundary warning/reference,yes,yes,no,Allowed only in internal docs. Do not deploy as customer-facing content.
+robots.txt,.txt,75,YARD: current project file,no,yes,no,Keep.
+script.js,.js,6788,YARD: current project file,no,yes,no,Keep.
+scripts/build_sizzle_yard_leads_sheet.mjs,.mjs,5313,YARD: current project file,no,yes,no,Keep.
+scripts/check_site.py,.py,1606,INTERNAL: neutral support file,no,no,no,Keep local unless later confirmed unnecessary.
+site.webmanifest,.webmanifest,521,INTERNAL: neutral support file,no,no,no,Keep local unless later confirmed unnecessary.
+sitemap.xml,.xml,1495,YARD: current project file,no,yes,no,Keep.
+sizzle_yard_hibachi_validation_package.md,.md,11104,YARD: current project file,no,yes,no,Keep.
+styles.css,.css,16750,YARD: current project file,no,no,no,Keep.
+thank-you.html,.html,1795,YARD: current project file,no,yes,no,Keep.
+tracking_plan.md,.md,2082,REVIEW: mentions Social only as boundary warning/reference,yes,yes,no,Allowed only in internal docs. Do not deploy as customer-facing content.
+vercel.json,.json,435,YARD: current project file,no,no,no,Keep.

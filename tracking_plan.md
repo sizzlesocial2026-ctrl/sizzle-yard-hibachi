@@ -31,19 +31,21 @@ Primary conversions:
 - Phone click
 - SMS click
 
-## 网站端已预留的配置
+## 网站端当前配置
 
-打开 [config.js](/Users/sizzlesocial/Documents/yard%20hibachi/config.js)，填入：
+2026-07-08 更新：网站运行配置已移到 [script.js](/Users/sizzlesocial/Documents/yard%20hibachi/script.js)，不再依赖 `config.js`，避免广告拦截器阻挡 lead/tracking 配置。
+
+当前 Yard Google Ads 配置：
 
 ```js
-googleTagId: "G-XXXXXXXXXX",
-googleAdsConversionId: "AW-XXXXXXXXXX",
-googleAdsLeadConversionLabel: "lead conversion label",
-googleAdsPhoneConversionLabel: "phone conversion label",
-googleAdsSmsConversionLabel: "sms conversion label"
+googleTagId: "AW-18300535067",
+googleAdsConversionId: "AW-18300535067",
+googleAdsLeadConversionLabel: "-udBCPKQj8scEJuCsJZE",
+googleAdsPhoneConversionLabel: "ET_PCNLU-8scEJuCsJZE",
+googleAdsSmsConversionLabel: "zPsiCNXU-8scEJuCsJZE"
 ```
 
-如果 Google Ads 只给了一个 `AW-XXXXXXXXXX/label`，前半段填到 `googleAdsConversionId`，斜杠后面的 label 填到对应的 `googleAdsLeadConversionLabel`。
+不要把 Sizzle Social 的 Ads ID、conversion labels 或 campaign 设置填入 Yard。
 
 当前网站脚本已经会追踪：
 

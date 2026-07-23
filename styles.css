@@ -1599,7 +1599,9 @@ textarea:focus {
 
   .mobile-bar {
     display: grid;
-    width: auto;
+    right: auto;
+    width: calc(100% - 24px);
+    max-width: calc(100vw - 24px);
   }
 
   .mobile-bar a {
